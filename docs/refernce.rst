@@ -5,7 +5,7 @@ API Reference
 QubitDrawFunctions
 ==========
 
-.. autoclass:: QubitDrawFunctions
-   :members:
-   :inherited-members:
-   :show-inheritance:
+.. autofunction:: QubitDrawFunctions
+
+
+.. autofunction:: DrawResonator
