@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome to DrawQubit’s documentation! &#8212; DrawQubit 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-drawqubit-s-documentation">
+<h1>Welcome to DrawQubit’s documentation!<a class="headerlink" href="#welcome-to-drawqubit-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="module-QubitDrawingFunctions">
+<span id="teacherapi-main"></span><h1>TeacherAPI main<a class="headerlink" href="#module-QubitDrawingFunctions" title="Permalink to this headline">¶</a></h1>
+<p>Created on Tue Mar 10 14:55:47 2020</p>
+<p>&#64;author: Quantico</p>
+<dl class="function">
+<dt id="QubitDrawingFunctions.CreateMarks">
+<code class="sig-prename descclassname">QubitDrawingFunctions.</code><code class="sig-name descname">CreateMarks</code><span class="sig-paren">(</span><em class="sig-param">nx=2</em>, <em class="sig-param">ny=2</em>, <em class="sig-param">dx=3000</em>, <em class="sig-param">dy=3000</em>, <em class="sig-param">PhotoLayer=2</em>, <em class="sig-param">eBeamLayer=5</em><span class="sig-paren">)</span><a class="headerlink" href="#QubitDrawingFunctions.CreateMarks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create cross lithography marks on the chip.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="QubitDrawingFunctions.DrawBiasLine">
+<code class="sig-prename descclassname">QubitDrawingFunctions.</code><code class="sig-name descname">DrawBiasLine</code><span class="sig-paren">(</span><em class="sig-param">BiaslineCellName='Biasline'</em>, <em class="sig-param">BiaslineLength=600</em>, <em class="sig-param">LineWidth=5</em>, <em class="sig-param">SpaceWidth=6</em>, <em class="sig-param">Tshape=True</em>, <em class="sig-param">Galvanic=False</em>, <em class="sig-param">TerminalWidth=60</em>, <em class="sig-param">Rotation=0</em>, <em class="sig-param">BigWidth=96</em>, <em class="sig-param">LauncherWidth=352</em>, <em class="sig-param">layer=2</em><span class="sig-paren">)</span><a class="headerlink" href="#QubitDrawingFunctions.DrawBiasLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a biasline cell that contains references to one mainline (two parallel lines) cell , 
+one launcher cell and a T-shape terminal.
+The cell origin is defined at the (center of the) end of the terminal.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="QubitDrawingFunctions.DrawFourJJloop">
+<code class="sig-prename descclassname">QubitDrawingFunctions.</code><code class="sig-name descname">DrawFourJJloop</code><span class="sig-paren">(</span><em class="sig-param">FourJJloopCellName='4JJloop', FourJJloopLength=10.5, FourJJloopWidth=None, LineWidth=2, JJparameters={'BridgeWidth': 0.14, 'FingerLength': 1, 'FingerWidth': 0.36, 'TaperWidth': 0.5}, JJRelations=[1, 1, 1, 1], eBeamLayer=5</em><span class="sig-paren">)</span><a class="headerlink" href="#QubitDrawingFunctions.DrawFourJJloop" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a Four Josephson-junctions loop cell.
+The cell origin is defined at the center of the loop.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="QubitDrawingFunctions.DrawFourJJqubit">
+<code class="sig-prename descclassname">QubitDrawingFunctions.</code><code class="sig-name descname">DrawFourJJqubit</code><span class="sig-paren">(</span><em class="sig-param">FourJJqubitCellName='4JJqubit', FourJJloopLength=10.5, FourJJloopWidth=0, LineWidth=2, Spacing=20, RectangleLength=None, RectangleWidth=100, JJparameters={'BridgeWidth': 0.14, 'FingerLength': 1, 'FingerWidth': 0.36, 'TaperWidth': 0.5}, JJRelations=[1, 1, 1, 1], CircuitLayer=2, eBeamLayer=5</em><span class="sig-paren">)</span><a class="headerlink" href="#QubitDrawingFunctions.DrawFourJJqubit" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a four-Josephson-junctions loop cell that contains references to the 4JJ (not necesserily identical) loop cell and the
+connections to the capacitor’s plates.
+It separately returns the capacitor cell (two plates placed next to the loop) together with the qubit background to be added to the resist mask.
+Finally it returns the qubit origin with respect to the capacitor center (2-tuple).
+Three junctions (usually the bigger ones) are on one branch of the loop, and the fourth is on the other.
+The cell origin is defined at the center of the capacitor.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="QubitDrawingFunctions.DrawJosephsonJunction">
+<code class="sig-prename descclassname">QubitDrawingFunctions.</code><code class="sig-name descname">DrawJosephsonJunction</code><span class="sig-paren">(</span><em class="sig-param">JosephsonJunctionCellName='IndependentJosephsonJunction'</em>, <em class="sig-param">LineWidth=2</em>, <em class="sig-param">FingerWidth=0.36</em>, <em class="sig-param">FingerLength=1</em>, <em class="sig-param">TaperWidth=0.5</em>, <em class="sig-param">BridgeWidth=0.14</em>, <em class="sig-param">layer=2</em><span class="sig-paren">)</span><a class="headerlink" href="#QubitDrawingFunctions.DrawJosephsonJunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a Josephson junction cell.
+The cell origin is defined at the connection with the line.</p>
+<blockquote>
+<div><p><a href="#id3"><span class="problematic" id="id4">|\__
+| __|</span></a>
+<a href="#id1"><span class="problematic" id="id2">|</span></a>/</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="QubitDrawingFunctions.DrawLauncher">
+<code class="sig-prename descclassname">QubitDrawingFunctions.</code><code class="sig-name descname">DrawLauncher</code><span class="sig-paren">(</span><em class="sig-param">LauncherCellName='IndependentLauncher'</em>, <em class="sig-param">LineWidth=10</em>, <em class="sig-param">SpaceWidth=6</em>, <em class="sig-param">BigWidth=96</em>, <em class="sig-param">LauncherWidth=352</em>, <em class="sig-param">layer=2</em><span class="sig-paren">)</span><a class="headerlink" href="#QubitDrawingFunctions.DrawLauncher" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a launcher cell, e.g. for feedlines and biadlines.
+The cell origin is defined at the connection with the line element.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="QubitDrawingFunctions.DrawRFsquid">
+<code class="sig-prename descclassname">QubitDrawingFunctions.</code><code class="sig-name descname">DrawRFsquid</code><span class="sig-paren">(</span><em class="sig-param">RFsquidCellName='RFsquid'</em>, <em class="sig-param">RFsquidLength=155.5</em>, <em class="sig-param">RFsquidWidth=12</em>, <em class="sig-param">LineWidth=2</em>, <em class="sig-param">JJparameters={'BridgeWidth': 0.14</em>, <em class="sig-param">'FingerLength': 1.36</em>, <em class="sig-param">'FingerWidth': 0.36</em>, <em class="sig-param">'TaperWidth': 0.5}</em>, <em class="sig-param">layer=2</em><span class="sig-paren">)</span><a class="headerlink" href="#QubitDrawingFunctions.DrawRFsquid" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns an RFsquid cell that contains references to a line cell and
+a Josephson junction cell.
+The cell origin is defined at the center of the RFsquid loop.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="QubitDrawingFunctions.DrawReflectionFeedline">
+<code class="sig-prename descclassname">QubitDrawingFunctions.</code><code class="sig-name descname">DrawReflectionFeedline</code><span class="sig-paren">(</span><em class="sig-param">FeedlineCellName='Feedline'</em>, <em class="sig-param">MainlineLength=3000</em>, <em class="sig-param">LineWidth=10</em>, <em class="sig-param">SpaceWidth=6</em>, <em class="sig-param">BigWidth=96</em>, <em class="sig-param">LauncherWidth=352</em>, <em class="sig-param">layer=2</em><span class="sig-paren">)</span><a class="headerlink" href="#QubitDrawingFunctions.DrawReflectionFeedline" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a feedline cell (in a list) that contains references to one curved mainline cell 
+and one launcher cell, placed on one end of the main line.
+The cell origin is defined at the center of the mainline.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="QubitDrawingFunctions.DrawResonator">
+<code class="sig-prename descclassname">QubitDrawingFunctions.</code><code class="sig-name descname">DrawResonator</code><span class="sig-paren">(</span><em class="sig-param">ResonatorCellName='Resonator'</em>, <em class="sig-param">LineWidth=10</em>, <em class="sig-param">SpaceWidth=6</em>, <em class="sig-param">elongation=150</em>, <em class="sig-param">num_meanders=1</em>, <em class="sig-param">TerminalWidth=100</em>, <em class="sig-param">layer=2</em><span class="sig-paren">)</span><a class="headerlink" href="#QubitDrawingFunctions.DrawResonator" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a list with aresonator cell that contains cell references to a feedline coupler,
+meander(s) and a qubit coupler.
+The total length of the resonator is also returned in the list.
+The cell origin is defined at the connection to the feedline.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="QubitDrawingFunctions.DrawTransmissionFeedline">
+<code class="sig-prename descclassname">QubitDrawingFunctions.</code><code class="sig-name descname">DrawTransmissionFeedline</code><span class="sig-paren">(</span><em class="sig-param">FeedlineCellName='Feedline'</em>, <em class="sig-param">MainlineLength=2000</em>, <em class="sig-param">LineWidth=10</em>, <em class="sig-param">SpaceWidth=6</em>, <em class="sig-param">BigWidth=96</em>, <em class="sig-param">LauncherWidth=352</em>, <em class="sig-param">layer=2</em><span class="sig-paren">)</span><a class="headerlink" href="#QubitDrawingFunctions.DrawTransmissionFeedline" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a symmetrical feedline cell (in a list) that contains references to one mainline cell 
+and one launcher cell, placed on both sides of the main line.
+The cell origin is defined at the center of the mainline.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="QubitDrawingFunctions.saveCell2GDS">
+<code class="sig-prename descclassname">QubitDrawingFunctions.</code><code class="sig-name descname">saveCell2GDS</code><span class="sig-paren">(</span><em class="sig-param">cell</em>, <em class="sig-param">gdsName</em><span class="sig-paren">)</span><a class="headerlink" href="#QubitDrawingFunctions.saveCell2GDS" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function save the given cell to GDS file with the name ‘gdsName’</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">DrawQubit</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, QUANTIC.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
