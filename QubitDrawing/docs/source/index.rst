@@ -11,5 +11,5 @@ Welcome to DrawQubit's documentation!
    :caption: Contents:
 
 ===================
-.. automodule:: QubitDrawingFunctions
+.. automodule:: qbdraw
    :members:
